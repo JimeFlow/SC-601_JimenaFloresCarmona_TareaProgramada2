@@ -1,0 +1,97 @@
+﻿@model TP2_Trigonometria_Triangulos.Models.TriangleModel
+
+@{
+    ViewBag.Title = "Triangle Calculator";
+}
+
+<main>
+    <section class="row text-center" aria-labelledby="appTitle">
+        <h1 id="appTitle" class="display-4">🔺🔺🔺 Triangle Calculator 🔺🔺🔺</h1>
+        <h2 class="text-muted">Explora las propiedades de tu triángulo</h2>
+        <p class="lead">Calcula el perímetro, área y ángulos con precisión.</p>
+    </section>
+
+    <div class="row">
+        <section class="col-md-6 offset-md-3">
+            @using (Html.BeginForm("CalculateTriangle", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Ingrese las longitudes de los lados:</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <!-- Campos de entrada optimizados -->
+                    <div class="form-row">
+                        <div class="col">
+                            @Html.LabelFor(model => model.A, "Lado A", new { @class = "control-label" })
+                            @Html.EditorFor(model => model.A, new { htmlAttributes = new { @class = "form-control", type = "number", step = "any", min = "0.01" } })
+                            @Html.ValidationMessageFor(model => model.A, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col">
+                            @Html.LabelFor(model => model.B, "Lado B", new { @class = "control-label" })
+                            @Html.EditorFor(model => model.B, new { htmlAttributes = new { @class = "form-control", type = "number", step = "any", min = "0.01" } })
+                            @Html.ValidationMessageFor(model => model.B, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col">
+                            @Html.LabelFor(model => model.C, "Lado C", new { @class = "control-label" })
+                            @Html.EditorFor(model => model.C, new { htmlAttributes = new { @class = "form-control", type = "number", step = "any", min = "0.01" } })
+                            @Html.ValidationMessageFor(model => model.C, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center mt-4">
+                        <button type="submit" value="Calcular" class="btn btn-primary btn-lg mt-3">
+                            🔎 Calcular Propiedades
+                        </button>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+
+    @if (Model != null && Model.Perimetro > 0)
+    {
+        <hr class="my-4 border border-primary">
+        <section class="row text-center">
+            <h3>✨ Resultados del Triángulo ✨</h3>
+            <table class="table table-bordered text-center" style="width: 50%; font-size: 13px; margin: auto;">
+                <thead>
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Perímetro</td><td>@Model.Perimetro u</td></tr>
+                    <tr><td>Semiperímetro</td><td>@Model.Semiperimetro u</td></tr>
+                    <tr><td>Área</td><td>@String.Format("{0:F2}", Model.Area) u²</td></tr>
+                    <tr><td>Tipo</td><td>@Model.TipoTriangulo</td></tr>
+                </tbody>
+            </table>
+
+            @if (Model.AnguloAlfa > 0 && Model.AnguloBeta > 0 && Model.AnguloGamma > 0)
+            {
+                <h4 class="mt-5">Ángulos del Triángulo</h4>
+                <table class="table table-bordered text-center" style="width: 50%; font-size: 13px; margin: auto;">
+                    <thead>
+                        <tr>
+                            <th>Ángulo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>&alpha;</td><td>@String.Format("{0:F2}", Model.AnguloAlfa)°</td></tr>
+                        <tr><td>&beta;</td><td>@String.Format("{0:F2}", Model.AnguloBeta)°</td></tr>
+                        <tr><td>&gamma;</td><td>@String.Format("{0:F2}", Model.AnguloGamma)°</td></tr>
+                    </tbody>
+                </table>
+            }
+        </section>
+    }
+</main>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
