@@ -51,24 +51,6 @@ La aplicación se ejecuta en un entorno web, accesible desde cualquier navegador
         * Ángulo $\gamma$ (opuesto al lado $c$): $\cos \gamma = \frac{a^2 + b^2 - c^2}{2ab}$
         Los resultados de los ángulos se presentan en grados ($^\circ$), no en radianes.
 
-    ### 📏 Fórmulas Matemáticas
-    1.  **Perímetro (P)**  
-       \[
-       P = a + b + c
-       \]
-     2.  **Semiperímetro (S)**  
-       \[
-       S = \frac{P}{2}
-       \]
-     3. **Área (A)** usando **Herón**  
-       \[
-       A = \sqrt{S (S-a) (S-b) (S-c)}
-       \]
-     4. **Cálculo de Ángulos** usando la **Ley de Cosenos**  
-       \[
-       \cos(\alpha) = \frac{b^2 + c^2 - a^2}{2bc}
-       \]
-
 ---
 
 ## Especificaciones Técnicas
