@@ -68,7 +68,9 @@ La aplicación se ejecuta en un entorno web, accesible desde cualquier navegador
        \[
        \cos(\alpha) = \frac{b^2 + c^2 - a^2}{2bc}
        \]
-   
+
+---
+
 ## Especificaciones Técnicas
 
 * **Lenguaje de Programación:** C#
@@ -77,6 +79,8 @@ La aplicación se ejecuta en un entorno web, accesible desde cualquier navegador
 * **Entorno de Desarrollo Integrado (IDE):** Visual Studio Community 2022.
 * **Clase Utilizada:** Se hace uso extensivo de la clase `System.Math` del .NET Framework para todas las operaciones matemáticas y trigonométricas, incluyendo `Math.Sqrt()`, `Math.Pow()`, `Math.Acos()`, y la constante `Math.PI`.
 * **Estructura del Proyecto:** El proyecto está organizado dentro de una solución única (`.sln`), con el proyecto principal incluido y estructurado según el patrón MVC (Modelos, Vistas, Controladores).
+
+---
 
 ## 📚 **Recursos de Apoyo y Referencias**
 ### Repositorio del proyecto: 
