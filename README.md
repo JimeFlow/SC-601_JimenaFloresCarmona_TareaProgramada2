@@ -31,12 +31,12 @@ La aplicación se ejecuta en un entorno web, accesible desde cualquier navegador
 
 * **Proceso de Cálculo:** Una vez que el usuario activa el botón de `submit`, el sistema ejecuta los siguientes pasos en el orden especificado:
 
-    1.  **Validación de Datos Introducidos:**
+    *  **Validación de Datos Introducidos:**
         * **Validación de Rango:** Se verifica que las longitudes de los lados `a`, `b` y `c` sean valores numéricos válidos y estrictamente mayores que cero. Esta validación se implementa utilizando `DataAnnotations` en el modelo y se refuerza con validación del lado del servidor.
         * **Validación de Desigualdad Triangular:** Se comprueba que la suma de las longitudes de los dos lados más cortos sea estrictamente mayor que la longitud del lado más largo. Si esta condición no se cumple, se considera que los lados no pueden formar un triángulo válido.
         * En caso de que alguna de estas validaciones falle, se mostrarán mensajes de error claros y concisos al usuario en la misma página del formulario, sin procesar los cálculos.
 
-    2.  **Cálculo de Propiedades del Triángulo:** Si todos los datos son válidos y forman un triángulo, se calculan las siguientes propiedades:
+    *  **Cálculo de Propiedades del Triángulo:** Si todos los datos son válidos y forman un triángulo, se calculan las siguientes propiedades:
         * **Perímetro (P):** La suma de las longitudes de los tres lados: $P = a + b + c$. El resultado se expresa en unidades lineales (u).
         * **Semiperímetro (S):** La mitad del perímetro: $S = P / 2$. El resultado se expresa en unidades lineales (u).
         * **Área (A):** Calculada mediante la fórmula de Herón: $A = \sqrt{S(S-a)(S-b)(S-c)}$. El resultado se expresa en unidades cuadráticas (u²).
@@ -45,26 +45,26 @@ La aplicación se ejecuta en un entorno web, accesible desde cualquier navegador
             * **Isósceles:** Si exactamente dos lados son de igual longitud.
             * **Escaleno:** Si los tres lados tienen longitudes diferentes.
 
-    3.  **Cálculo de los Ángulos Internos:** Se calculan los valores de los tres ángulos internos del triángulo utilizando la Ley de Cosenos:
+    *  **Cálculo de los Ángulos Internos:** Se calculan los valores de los tres ángulos internos del triángulo utilizando la Ley de Cosenos:
         * Ángulo $\alpha$ (opuesto al lado $a$): $\cos \alpha = \frac{b^2 + c^2 - a^2}{2bc}$
         * Ángulo $\beta$ (opuesto al lado $b$): $\cos \beta = \frac{a^2 + c^2 - b^2}{2ac}$
         * Ángulo $\gamma$ (opuesto al lado $c$): $\cos \gamma = \frac{a^2 + b^2 - c^2}{2ab}$
         Los resultados de los ángulos se presentan en grados ($^\circ$), no en radianes.
 
     ### 📏 Fórmulas Matemáticas
-    1. **Perímetro (P)**  
+    1️⃣ **Perímetro (P)**  
        \[
        P = a + b + c
        \]
-    2. **Semiperímetro (S)**  
+    2️⃣ **Semiperímetro (S)**  
        \[
        S = \frac{P}{2}
        \]
-    3. **Área (A)** usando **Herón**  
+    3️⃣ **Área (A)** usando **Herón**  
        \[
        A = \sqrt{S (S-a) (S-b) (S-c)}
        \]
-    4. **Cálculo de Ángulos** usando la **Ley de Cosenos**  
+    4️⃣ **Cálculo de Ángulos** usando la **Ley de Cosenos**  
        \[
        \cos(\alpha) = \frac{b^2 + c^2 - a^2}{2bc}
        \]
