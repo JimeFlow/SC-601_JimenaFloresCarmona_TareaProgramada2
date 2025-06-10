@@ -52,19 +52,19 @@ La aplicación se ejecuta en un entorno web, accesible desde cualquier navegador
         Los resultados de los ángulos se presentan en grados ($^\circ$), no en radianes.
 
     ### 📏 Fórmulas Matemáticas
-    1️⃣ **Perímetro (P)**  
+    1.  **Perímetro (P)**  
        \[
        P = a + b + c
        \]
-    2️⃣ **Semiperímetro (S)**  
+     2.  **Semiperímetro (S)**  
        \[
        S = \frac{P}{2}
        \]
-    3️⃣ **Área (A)** usando **Herón**  
+     3. **Área (A)** usando **Herón**  
        \[
        A = \sqrt{S (S-a) (S-b) (S-c)}
        \]
-    4️⃣ **Cálculo de Ángulos** usando la **Ley de Cosenos**  
+     4. **Cálculo de Ángulos** usando la **Ley de Cosenos**  
        \[
        \cos(\alpha) = \frac{b^2 + c^2 - a^2}{2bc}
        \]
